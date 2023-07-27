@@ -1,23 +1,39 @@
-import React from 'react'
-import { SidebarDatainterface } from '../../../model'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { SidebarDatainterface } from "../../../model";
 
-const sidebarData:SidebarDatainterface[] = [{text: "Contact", link: "/contact"},{text: "Charts and Maps", link:"/chartsandmaps"}];
+const sidebarData: SidebarDatainterface[] = [
+  { text: "Contact", link: "/home" },
+  { text: "Charts and Maps", link: "/chartsandmaps" },
+];
 
-const Sidebar:React.FC = () => {
+const Sidebar: React.FC = () => {
+  const navigate = useNavigate();
+  const [toggle, setToggle] = useState<boolean>(false);
+  const handleButtonClick: Function = (link: string) => {
+    navigate(link);
+  };
   return (
-        <div className={'w-72 h-screen bg-dark-purple text-white flex flex-col gap-10 pt'}>
+    <div
+      className={
+        !toggle
+          ? "w-full sm:w-72 h-screen bg-dark-purple text-white flex-col gap-10 pt flex"
+          : "hidden"
+      }
+    >
+      <h1 className="text-4xl">Menu</h1>
+      <div>
+        {sidebarData.map((value) => (
+          <div
+            className="flex bg-light-purple justify-center align-middle h-12 p-1 cursor-pointer hover:bg-light-white text-black"
+            onClick={() => handleButtonClick(value.link)}
+          >
+            <h1 className="text-xl">{value.text}</h1>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-            <h1 className='text-4xl'>Menu</h1>
-            <div>
-            {sidebarData.map((value)=> 
-            <div className='flex bg-light-purple justify-center align-middle h-12 p-1 cursor-pointer hover:bg-light-white text-black' >
-                <h1 className='text-xl'>{value.text}</h1>
-            </div>
-            )}
-            </div>
-        </div>
-        
-  )
-}
-
-export default Sidebar
+export default Sidebar;
