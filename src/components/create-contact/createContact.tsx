@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addContactAction } from "../../redux/action";
-import { contactsDataInterface, RootState } from "../../model";
+import { contactsDataInterface } from "../../model";
 import { selectContactsData } from "../../redux/selector";
 
 function CreactContact() {

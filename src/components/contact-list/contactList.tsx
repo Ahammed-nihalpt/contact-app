@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { contactsDataInterface, RootState } from "../../model";
+import { contactsDataInterface } from "../../model";
 import { editContactAction, deleteContactAction } from "../../redux/action";
 import { selectContactsData } from "../../redux/selector";
 

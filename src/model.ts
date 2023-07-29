@@ -13,3 +13,9 @@ export interface contactsDataInterface {
 export interface RootState {
   contacts: contactsDataInterface[];
 }
+
+export interface sideBarProps {
+  toggle: boolean;
+  changeToggleTrue: Function;
+  changeTogglefalse: Function;
+}
