@@ -12,15 +12,13 @@ function ContactList() {
     contactsData.map((value) => false)
   );
 
-  const [formValues, setFormValues] = useState<contactsDataInterface[]>(
-    useSelector((state: contactsDataInterface[]) => state)
-  );
+  const [formValues, setFormValues] =
+    useState<contactsDataInterface[]>(contactsData);
 
   const handleChange = (event: React.SyntheticEvent, index: number) => {
     const name: string = (event.target as HTMLInputElement).name;
     const value: string = (event.target as HTMLInputElement).value;
 
-    // Create a new array of formValues and update the edited values for the specific contact
     setFormValues((prevFormValues) => {
       const updatedFormValues = [...prevFormValues];
       updatedFormValues[index] = { ...updatedFormValues[index], [name]: value };
@@ -37,15 +35,12 @@ function ContactList() {
   };
 
   const handleEditSubmit = (index: number) => {
-    console.log(contactsData[index].id);
-    console.log(formValues[index]);
     dispatch(editContactAction(contactsData[index].id, formValues[index]));
     handleEditing(index);
   };
 
   const handleDelete = (id: number) => {
     dispatch(deleteContactAction(id));
-    console.log(contactsData);
   };
 
   return (
@@ -90,17 +85,11 @@ function ContactList() {
                   name="status"
                   id=""
                   onChange={(event) => handleChange(event, index)}
+                  defaultValue={value.status}
                   className="h-10 w-40 px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-blue-500"
                 >
-                  <option value="active" selected={value.status === "active"}>
-                    Active
-                  </option>
-                  <option
-                    value="inactive"
-                    selected={value.status === "inactive"}
-                  >
-                    Inactive
-                  </option>
+                  <option value="active">Active</option>
+                  <option value="inactive">Inactive</option>
                 </select>
               </div>
             )}
@@ -140,6 +129,11 @@ function ContactList() {
             </div>
           </div>
         ))}
+      {contactsData.length <= 0 && (
+        <div>
+          <h1 className="text-5xl font-bold">No contacts</h1>
+        </div>
+      )}
     </div>
   );
 }
