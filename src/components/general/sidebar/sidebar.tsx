@@ -25,6 +25,7 @@ const Sidebar: React.FC = () => {
       <div>
         {sidebarData.map((value) => (
           <div
+            key={value.text}
             className="flex bg-light-purple justify-center align-middle h-12 p-1 cursor-pointer hover:bg-light-white text-black"
             onClick={() => handleButtonClick(value.link)}
           >
