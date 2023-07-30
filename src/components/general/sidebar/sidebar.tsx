@@ -35,7 +35,9 @@ function Sidebar({
   }, []);
 
   return (
-    <div className={screenWidth <= 375 && !toggle ? "h-8" : "h-8 bg-black"}>
+    <div
+      className={screenWidth <= 375 && !toggle ? "h-8 fixed" : "h-8 bg-black"}
+    >
       <div
         className={
           toggle
@@ -62,18 +64,6 @@ function Sidebar({
             </div>
           ))}
       </div>
-      {!toggle && (
-        <div>
-          <div className="sm:hidden bg-slate-600">
-            <div
-              className="flex justify-center items-center p-2"
-              onClick={() => changeToggleTrue()}
-            >
-              <h1 className="text-4xl text-white">Menu</h1>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

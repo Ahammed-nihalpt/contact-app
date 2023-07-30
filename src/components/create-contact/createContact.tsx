@@ -32,7 +32,7 @@ function CreactContact() {
   };
 
   return (
-    <div className="bg-gray-50 flex flex-col justify-center items-center sm:w-5/12 gap-12 p-5 h-96">
+    <div className="bg-gray-50 flex flex-col justify-center items-center w-fit gap-12 p-5 h-96">
       <h1 className="flex justify-center text-2xl font-bold">Create Contact</h1>
       <div className="flex justify-center items-center gap-8 w-full">
         <h2> First name:</h2>

@@ -15,14 +15,18 @@ const Layout: React.FC = () => {
   };
 
   return (
-    <div className="flex">
-      <Sidebar
+    <div>
+      <Topbar
         toggle={toggle}
         changeToggleTrue={changeToggleTrue}
         changeTogglefalse={changeToggleFalse}
       />
-      <div className="flex flex-col w-full">
-        <Topbar />
+      <div className="flex">
+        <Sidebar
+          toggle={toggle}
+          changeToggleTrue={changeToggleTrue}
+          changeTogglefalse={changeToggleFalse}
+        />
         <div className="w-full">
           <Outlet />
         </div>

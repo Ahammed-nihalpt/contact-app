@@ -19,3 +19,13 @@ export interface sideBarProps {
   changeToggleTrue: Function;
   changeTogglefalse: Function;
 }
+
+export interface topBarProps {
+  toggle: boolean;
+  changeToggleTrue: Function;
+  changeTogglefalse: Function;
+}
+
+export interface lineProps {
+  data: { [date: string]: number };
+}

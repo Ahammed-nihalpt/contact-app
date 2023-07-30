@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "../layout/layout";
 import Contact from "./contact";
 import CreateContactPage from "./createContact";
+import MapAndChart from "./mapAndChart";
 
 const Router: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const Router: React.FC = () => {
       <Route element={<Layout />}>
         <Route path="/home" element={<Contact />} />
         <Route path="/create" element={<CreateContactPage />} />
+        <Route path="/chartsandmaps" element={<MapAndChart />} />
       </Route>
     </Routes>
   );
