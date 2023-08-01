@@ -3,7 +3,7 @@ import CreateContactForm from "../components/create-contact/createContact";
 
 function CreateContactPage() {
   return (
-    <div className="flex justify-center items-center h-screen w-full">
+    <div className="flex justify-center items-center h-screen w-full overflow-hidden">
       <CreateContactForm />
     </div>
   );

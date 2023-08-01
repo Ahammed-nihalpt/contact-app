@@ -12,6 +12,7 @@ function Sidebar({
   changeToggleTrue,
   changeTogglefalse,
 }: sideBarProps) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const navigate = useNavigate();
   const handleButtonClick: Function = (link: string) => {
@@ -32,6 +33,7 @@ function Sidebar({
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -42,7 +44,7 @@ function Sidebar({
         className={
           toggle
             ? "flex bg-slate-600 w-96 h-screen flex-col"
-            : "sm:flex bg-slate-600 hidden  sm:w-96 sm:h-screen flex-col"
+            : "sm:flex bg-slate-600 hidden  sm:w-2/2 sm:h-screen flex-col overflow-hidden"
         }
       >
         <div className="hidden sm:flex justify-center items-center p-2">

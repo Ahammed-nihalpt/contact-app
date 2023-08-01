@@ -9,7 +9,7 @@ const Router: React.FC = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/home" element={<Contact />} />
+        <Route path="/" element={<Contact />} />
         <Route path="/create" element={<CreateContactPage />} />
         <Route path="/chartsandmaps" element={<MapAndChart />} />
       </Route>
