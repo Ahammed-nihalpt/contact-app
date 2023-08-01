@@ -14,7 +14,6 @@ const Map: React.FC<MapProps> = ({ data }) => {
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-      {/* Map the data to create markers */}
       {data.map((countryData) => (
         <Marker
           key={countryData.country}
