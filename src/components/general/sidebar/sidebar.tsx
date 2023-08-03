@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { SidebarDatainterface, sideBarProps } from "../../../model";
 
 const sidebarData: SidebarDatainterface[] = [
-  { text: "Contact", link: "/home" },
+  { text: "Contact", link: "/" },
   { text: "Charts and Maps", link: "/chartsandmaps" },
 ];
 
